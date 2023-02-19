@@ -1,12 +1,13 @@
-import './App.css';
-import ForwardCounter from './components/ForwardCounter/ForwardCounter';
-import BackwardCounter from './components/BackwardCounter/BackwardCounter'
+import "./App.css";
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Home } from "./pages/Home";
+
+const router = createBrowserRouter([{ path: "/", element: <Home /> }]);
 function App() {
   return (
     <div className="App">
-      <ForwardCounter/>
-      <BackwardCounter/>
+      <RouterProvider router={router} />
     </div>
   );
 }
