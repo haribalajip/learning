@@ -1,10 +1,9 @@
 import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
+import TopNav from "../components/TopNav/TopNav";
 export default function Root() {
   return (
     <div>
-      <Link to="/home">Home</Link>
-      <Link to="/about-me">AboutMe</Link>
+      <TopNav />
       <Outlet />
     </div>
   );
