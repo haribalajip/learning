@@ -8,3 +8,8 @@
     padding-right: 10px;
     color: rgba(0, 0, 255, 0.468);
 }
+
+a.active {
+    color: black;
+    text-decoration: underline;
+}

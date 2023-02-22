@@ -1,10 +1,20 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import classes from "./TopNav.module.css";
 export default function TopNav() {
   return (
     <div className={classes.topNav}>
-      <Link to="/home">Home</Link>
-      <Link to="/about-me">AboutMe</Link>
+      <NavLink
+        className={({ isActive }) => (isActive ? classes.active : "")}
+        to="/home"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? classes.active : "")}
+        to="/about-me"
+      >
+        AboutMe
+      </NavLink>
     </div>
   );
 }
