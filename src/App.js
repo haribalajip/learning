@@ -9,13 +9,13 @@ import Errorpage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/root",
     element: <Root />,
     errorElement: <Errorpage />,
     children: [
-      { path: "/about-me", element: <AboutMe /> },
-      { path: "/home", element: <Home /> },
-      { path: "/product/:id", element: <Product /> },
+      { path: "about-me", element: <AboutMe /> },
+      { path: "home", element: <Home /> },
+      { path: "product/:id", element: <Product /> },
     ],
   },
 ]);

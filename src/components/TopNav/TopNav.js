@@ -5,19 +5,19 @@ export default function TopNav() {
     <div className={classes.topNav}>
       <NavLink
         className={({ isActive }) => (isActive ? classes.active : "")}
-        to="/home"
+        to="home"
       >
         Home
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? classes.active : "")}
-        to="/about-me"
+        to="about-me"
       >
         AboutMe
       </NavLink>
       <NavLink
         className={({ isActive }) => (isActive ? classes.active : "")}
-        to="/product/1"
+        to="product/1"
       >
         Sample product
       </NavLink>
