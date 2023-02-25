@@ -15,6 +15,12 @@ export default function TopNav() {
       >
         AboutMe
       </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? classes.active : "")}
+        to="/product/1"
+      >
+        Sample product
+      </NavLink>
     </div>
   );
 }
