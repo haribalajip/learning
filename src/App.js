@@ -9,13 +9,22 @@ import Errorpage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
-    path: "/root",
+    path: "/",
     element: <Root />,
     errorElement: <Errorpage />,
     children: [
       { path: "about-me", element: <AboutMe /> },
       { path: "home", element: <Home /> },
-      { path: "product/:id", element: <Product /> },
+      {
+        path: "product/:id",
+        element: <Product />,
+        loader: async () => {
+          // Waits for this loader to resolve before loading the element.
+          return await new Promise((resolve) =>
+            setTimeout(() => resolve(true), 2000)
+          );
+        },
+      },
     ],
   },
 ]);
