@@ -3,7 +3,7 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./pages/Home";
 import AboutMe from "./pages/AboutMe";
-import Product from "./pages/Product";
+import { Product, ProductLoader } from "./pages/Product";
 import Root from "./pages/Root";
 import Errorpage from "./pages/ErrorPage";
 
@@ -18,12 +18,7 @@ const router = createBrowserRouter([
       {
         path: "product/:id",
         element: <Product />,
-        loader: async () => {
-          // Waits for this loader to resolve before loading the element.
-          return await new Promise((resolve) =>
-            setTimeout(() => resolve(true), 2000)
-          );
-        },
+        loader: ProductLoader,
       },
     ],
   },
