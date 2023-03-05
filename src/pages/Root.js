@@ -3,11 +3,10 @@ import TopNav from "../components/TopNav/TopNav";
 import { useNavigation } from "react-router-dom";
 export default function Root() {
   let navigation = useNavigation();
-  console.log(navigation);
   return (
     <div>
       <TopNav />
-      {navigation.state === "loading" && <p>Loading...</p>}
+      {navigation.state === "loading" && <p> Route Loading...</p>}
 
       <Outlet />
     </div>

@@ -3,10 +3,12 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./pages/Home";
 import AboutMe from "./pages/AboutMe";
-import { Product, ProductLoader } from "./pages/Product";
+import { ProductLoader } from "./loaders/product-loader";
 import Root from "./pages/Root";
 import Errorpage from "./pages/ErrorPage";
+import { lazy, Suspense } from "react";
 
+const Product = lazy(() => import("./pages/Product"));
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,7 +19,11 @@ const router = createBrowserRouter([
       { path: "home", element: <Home /> },
       {
         path: "product/:id",
-        element: <Product />,
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <Product />
+          </Suspense>
+        ),
         loader: ProductLoader,
       },
     ],
